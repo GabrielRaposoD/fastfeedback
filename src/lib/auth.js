@@ -1,4 +1,5 @@
 import { auth } from 'firebase';
+import { createUser } from './db';
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import firebase from './firebase';
 
@@ -16,34 +17,41 @@ export const useAuth = () => {
 function useProvideAuth() {
   const [user, setUser] = useState(null);
 
-  console.log(user);
-  const signinWithGitHub = () => {
+  const handleUser = (rawUser) => {
+    if (rawUser) {
+      const user = formatUser(rawUser);
+      createUser(user.uid, user);
+      setUser(user);
+      return user;
+    } else {
+      setUser(false);
+      return false;
+    }
+  };
+
+  function signinWithGitHub() {
     return firebase
       .auth()
       .signInWithRedirect(new firebase.auth.GithubAuthProvider())
-      .then((response) => {
-        setUser(response.user);
-        return response.user;
-      });
-  };
+      .then((response) => handleUser(response.user));
+  }
 
-  const signout = () => {
+  function signinWithGoogle() {
+    return firebase
+      .auth()
+      .signInWithRedirect(new firebase.auth.GoogleAuthProvider())
+      .then((response) => handleUser(response.user));
+  }
+
+  function signout() {
     return firebase
       .auth()
       .signOut()
-      .then(() => {
-        setUser(false);
-      });
-  };
+      .then(() => handleUser(false));
+  }
 
   useEffect(() => {
-    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser(false);
-      }
-    });
+    const unsubscribe = firebase.auth().onAuthStateChanged(handleUser);
 
     return () => unsubscribe;
   }, []);
@@ -51,6 +59,17 @@ function useProvideAuth() {
   return {
     user,
     signinWithGitHub,
+    signinWithGoogle,
     signout,
+  };
+}
+
+function formatUser(user) {
+  return {
+    uid: user.uid,
+    email: user.email,
+    name: user.displayName,
+    provider: user.providerData[0].providerId,
+    photoUrl: user.photoURL,
   };
 }

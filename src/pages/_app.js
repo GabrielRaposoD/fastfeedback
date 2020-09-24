@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps, router }) {
           router.route === '/' ? 'Fast Feed Back' : '%s | Fast Feed Back'
         }
       />
-      <GoogleFonts href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap' />
+      <GoogleFonts href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' />
       <ProvideAuth>
         <Component {...pageProps} />
       </ProvideAuth>
