@@ -1,7 +1,7 @@
 module.exports = {
   purge: [
     './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}'
+    './src/pages/**/*.{js,ts,jsx,tsx}',
   ],
   prefix: '',
   important: false,
@@ -10,9 +10,9 @@ module.exports = {
     customForms: (theme) => ({
       default: {
         'radio, checkbox': {
-          borderColor: theme('colors.gray.500')
-        }
-      }
+          borderColor: theme('colors.gray.500'),
+        },
+      },
     }),
     typography: (theme) => ({
       default: {
@@ -20,17 +20,17 @@ module.exports = {
           a: {
             color: theme('colors.blue.600'),
             '&:hover': {
-              color: theme('colors.blue.500')
-            }
-          }
-        }
-      }
+              color: theme('colors.blue.500'),
+            },
+          },
+        },
+      },
     }),
     screens: {
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1280px'
+      xl: '1280px',
     },
     extend: {
       colors: {
@@ -38,7 +38,7 @@ module.exports = {
         black: '#000',
         white: '#fff',
         background: {
-          100: '#fff'
+          100: '#fff',
         },
         meadow: {
           50: '#e5fffd',
@@ -50,29 +50,29 @@ module.exports = {
           600: '#1c967a',
           700: '#08785a',
           800: '#004c36',
-          900: '#001a11'
+          900: '#001a11',
         },
         primary: {
-          100: '#D8FBED',
-          200: '#B3F7E1',
-          300: '#88E7D2',
-          400: '#65D0C1',
-          500: '#38B2AC',
-          600: '#289499',
-          700: '#1C7380',
-          800: '#115467',
-          900: '#0A3E55'
+          100: '#CDF5FF',
+          200: '#9CE6FF',
+          300: '#6BD2FF',
+          400: '#46BCFF',
+          500: '#0998FF',
+          600: '#0676DB',
+          700: '#0458B7',
+          800: '#023E93',
+          900: '#012C7A',
         },
         secondary: {
-          100: '#D8E5FB',
-          200: '#B3CBF7',
-          300: '#88A7E7',
-          400: '#6585D0',
-          500: '#3859B2',
-          600: '#284499',
-          700: '#1C3180',
-          800: '#112167',
-          900: '#0A1655'
+          100: '#D7FBFF',
+          200: '#B0F3FF',
+          300: '#88E6FF',
+          400: '#6BD6FF',
+          500: '#3ABDFF',
+          600: '#2A94DB',
+          700: '#1D70B7',
+          800: '#124F93',
+          900: '#0B387A',
         },
         success: {
           100: '#E9FEE1',
@@ -83,7 +83,7 @@ module.exports = {
           600: '#4BCD61',
           700: '#33AC53',
           800: '#208A46',
-          900: '#13723D'
+          900: '#13723D',
         },
         warning: {
           100: '#FEF2D0',
@@ -94,7 +94,7 @@ module.exports = {
           600: '#D17810',
           700: '#AF5C0B',
           800: '#8D4407',
-          900: '#753204'
+          900: '#753204',
         },
         danger: {
           100: '#FCE7DE',
@@ -105,7 +105,7 @@ module.exports = {
           600: '#B43E51',
           700: '#972B45',
           800: '#791B3A',
-          900: '#641034'
+          900: '#641034',
         },
         silver: {
           100: '#EFF8FC',
@@ -116,7 +116,7 @@ module.exports = {
           600: '#1F2B40',
           700: '#152036',
           800: '#0D162B',
-          900: '#080E24'
+          900: '#080E24',
         },
         gray: {
           100: '#f7fafc',
@@ -127,9 +127,9 @@ module.exports = {
           600: '#718096',
           700: '#4a5568',
           800: '#2d3748',
-          900: '#1a202c'
-        }
-      }
+          900: '#1a202c',
+        },
+      },
     },
     spacing: {
       px: '1px',
@@ -150,7 +150,7 @@ module.exports = {
       40: '10rem',
       48: '12rem',
       56: '14rem',
-      64: '16rem'
+      64: '16rem',
     },
     backgroundColor: (theme) => theme('colors'),
     backgroundPosition: {
@@ -162,16 +162,16 @@ module.exports = {
       right: 'right',
       'right-bottom': 'right bottom',
       'right-top': 'right top',
-      top: 'top'
+      top: 'top',
     },
     backgroundSize: {
       auto: 'auto',
       cover: 'cover',
-      contain: 'contain'
+      contain: 'contain',
     },
     borderColor: (theme) => ({
       ...theme('colors'),
-      default: theme('colors.gray.300', 'currentColor')
+      default: theme('colors.gray.300', 'currentColor'),
     }),
     borderRadius: {
       none: '0',
@@ -181,14 +181,14 @@ module.exports = {
       lg: '0.5rem',
       xl: '2.5rem',
       '2xl': '5rem',
-      full: '9999px'
+      full: '9999px',
     },
     borderWidth: {
       default: '1px',
       0: '0',
       2: '2px',
       4: '4px',
-      8: '8px'
+      8: '8px',
     },
     boxShadow: {
       xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
@@ -204,7 +204,7 @@ module.exports = {
       '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
-      none: 'none'
+      none: 'none',
     },
     container: {},
     cursor: {
@@ -214,24 +214,24 @@ module.exports = {
       wait: 'wait',
       text: 'text',
       move: 'move',
-      'not-allowed': 'not-allowed'
+      'not-allowed': 'not-allowed',
     },
     fill: {
-      current: 'currentColor'
+      current: 'currentColor',
     },
     flex: {
       1: '1 1 0%',
       auto: '1 1 auto',
       initial: '0 1 auto',
-      none: 'none'
+      none: 'none',
     },
     flexGrow: {
       0: '0',
-      default: '1'
+      default: '1',
     },
     flexShrink: {
       0: '0',
-      default: '1'
+      default: '1',
     },
     fontFamily: {
       sans: [
@@ -247,7 +247,7 @@ module.exports = {
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
-        '"Noto Color Emoji"'
+        '"Noto Color Emoji"',
       ],
       serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
@@ -256,8 +256,8 @@ module.exports = {
         'Consolas',
         '"Liberation Mono"',
         '"Courier New"',
-        'monospace'
-      ]
+        'monospace',
+      ],
     },
     fontSize: {
       '4xs': '0.3rem',
@@ -272,7 +272,7 @@ module.exports = {
       '3xl': '1.875rem',
       '4xl': '2.25rem',
       '5xl': '3rem',
-      '6xl': '4rem'
+      '6xl': '4rem',
     },
     fontWeight: {
       hairline: '100',
@@ -283,18 +283,18 @@ module.exports = {
       semibold: '600',
       bold: '700',
       extrabold: '800',
-      black: '900'
+      black: '900',
     },
     height: (theme) => ({
       auto: 'auto',
       ...theme('spacing'),
       full: '100%',
       screen: '100vh',
-      100: '24rem'
+      100: '24rem',
     }),
     inset: {
       0: '0',
-      auto: 'auto'
+      auto: 'auto',
     },
     letterSpacing: {
       tighter: '-0.05em',
@@ -302,7 +302,7 @@ module.exports = {
       normal: '0',
       wide: '0.025em',
       wider: '0.05em',
-      widest: '0.1em'
+      widest: '0.1em',
     },
     lineHeight: {
       none: '1',
@@ -318,21 +318,21 @@ module.exports = {
       7: '1.75rem',
       8: '2rem',
       9: '2.25rem',
-      10: '2.5rem'
+      10: '2.5rem',
     },
     listStyleType: {
       none: 'none',
       disc: 'disc',
-      decimal: 'decimal'
+      decimal: 'decimal',
     },
     margin: (theme, { negative }) => ({
       auto: 'auto',
       ...theme('spacing'),
-      ...negative(theme('spacing'))
+      ...negative(theme('spacing')),
     }),
     maxHeight: {
       full: '100%',
-      screen: '100vh'
+      screen: '100vh',
     },
     maxWidth: (theme, { breakpoints }) => ({
       none: 'none',
@@ -359,12 +359,12 @@ module.exports = {
       '5xl': '64rem',
       '6xl': '72rem',
       full: '100%',
-      ...breakpoints(theme('screens'))
+      ...breakpoints(theme('screens')),
     }),
     minHeight: {
       0: '0',
       full: '100%',
-      screen: '100vh'
+      screen: '100vh',
     },
     minWidth: {
       0: '0',
@@ -379,7 +379,7 @@ module.exports = {
       '1/2': '50%',
       '3/5': '60%',
       '3/4': '75%',
-      full: '100%'
+      full: '100%',
     },
     objectPosition: {
       bottom: 'bottom',
@@ -390,14 +390,14 @@ module.exports = {
       right: 'right',
       'right-bottom': 'right bottom',
       'right-top': 'right top',
-      top: 'top'
+      top: 'top',
     },
     opacity: {
       0: '0',
       25: '0.25',
       50: '0.5',
       75: '0.75',
-      100: '1'
+      100: '1',
     },
     order: {
       first: '-9999',
@@ -414,17 +414,17 @@ module.exports = {
       9: '9',
       10: '10',
       11: '11',
-      12: '12'
+      12: '12',
     },
     padding: (theme) => theme('spacing'),
     placeholderColor: (theme) => theme('colors'),
     stroke: {
-      current: 'currentColor'
+      current: 'currentColor',
     },
     strokeWidth: {
       0: '0',
       1: '1',
-      2: '2'
+      2: '2',
     },
     textColor: (theme) => theme('colors'),
     width: (theme) => ({
@@ -458,7 +458,7 @@ module.exports = {
       '11/12': '91.666667%',
       full: '100%',
       screen: '100vw',
-      'max-content': 'max-content'
+      'max-content': 'max-content',
     }),
     zIndex: {
       auto: 'auto',
@@ -467,7 +467,7 @@ module.exports = {
       20: '20',
       30: '30',
       40: '40',
-      50: '50'
+      50: '50',
     },
     gap: (theme) => theme('spacing'),
     gridTemplateColumns: {
@@ -483,7 +483,7 @@ module.exports = {
       9: 'repeat(9, minmax(0, 1fr))',
       10: 'repeat(10, minmax(0, 1fr))',
       11: 'repeat(11, minmax(0, 1fr))',
-      12: 'repeat(12, minmax(0, 1fr))'
+      12: 'repeat(12, minmax(0, 1fr))',
     },
     gridColumn: {
       auto: 'auto',
@@ -498,7 +498,7 @@ module.exports = {
       'span-9': 'span 9 / span 9',
       'span-10': 'span 10 / span 10',
       'span-11': 'span 11 / span 11',
-      'span-12': 'span 12 / span 12'
+      'span-12': 'span 12 / span 12',
     },
     gridColumnStart: {
       auto: 'auto',
@@ -514,7 +514,7 @@ module.exports = {
       10: '10',
       11: '11',
       12: '12',
-      13: '13'
+      13: '13',
     },
     gridColumnEnd: {
       auto: 'auto',
@@ -530,7 +530,7 @@ module.exports = {
       10: '10',
       11: '11',
       12: '12',
-      13: '13'
+      13: '13',
     },
     gridTemplateRows: {
       none: 'none',
@@ -539,7 +539,7 @@ module.exports = {
       3: 'repeat(3, minmax(0, 1fr))',
       4: 'repeat(4, minmax(0, 1fr))',
       5: 'repeat(5, minmax(0, 1fr))',
-      6: 'repeat(6, minmax(0, 1fr))'
+      6: 'repeat(6, minmax(0, 1fr))',
     },
     gridRow: {
       auto: 'auto',
@@ -548,7 +548,7 @@ module.exports = {
       'span-3': 'span 3 / span 3',
       'span-4': 'span 4 / span 4',
       'span-5': 'span 5 / span 5',
-      'span-6': 'span 6 / span 6'
+      'span-6': 'span 6 / span 6',
     },
     gridRowStart: {
       auto: 'auto',
@@ -558,7 +558,7 @@ module.exports = {
       4: '4',
       5: '5',
       6: '6',
-      7: '7'
+      7: '7',
     },
     gridRowEnd: {
       auto: 'auto',
@@ -568,7 +568,7 @@ module.exports = {
       4: '4',
       5: '5',
       6: '6',
-      7: '7'
+      7: '7',
     },
     transformOrigin: {
       center: 'center',
@@ -579,7 +579,7 @@ module.exports = {
       bottom: 'bottom',
       'bottom-left': 'bottom left',
       left: 'left',
-      'top-left': 'top left'
+      'top-left': 'top left',
     },
     scale: {
       0: '0',
@@ -591,7 +591,7 @@ module.exports = {
       105: '1.05',
       110: '1.1',
       125: '1.25',
-      150: '1.5'
+      150: '1.5',
     },
     rotate: {
       '-180': '-180deg',
@@ -600,7 +600,7 @@ module.exports = {
       0: '0',
       45: '45deg',
       90: '90deg',
-      180: '180deg'
+      180: '180deg',
     },
     translate: (theme, { negative }) => ({
       ...theme('spacing'),
@@ -611,7 +611,7 @@ module.exports = {
       '-1/2': '-50%',
       '-1/3': '-33%',
       '1/2': '50%',
-      full: '100%'
+      full: '100%',
     }),
     skew: {
       '-12': '-12deg',
@@ -620,7 +620,7 @@ module.exports = {
       0: '0',
       3: '3deg',
       6: '6deg',
-      12: '12deg'
+      12: '12deg',
     },
     transitionProperty: {
       none: 'none',
@@ -630,13 +630,13 @@ module.exports = {
       colors: 'background-color, border-color, color, fill, stroke',
       opacity: 'opacity',
       shadow: 'box-shadow',
-      transform: 'transform'
+      transform: 'transform',
     },
     transitionTimingFunction: {
       linear: 'linear',
       in: 'cubic-bezier(0.4, 0, 1, 1)',
       out: 'cubic-bezier(0, 0, 0.2, 1)',
-      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)'
+      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
     },
     transitionDuration: {
       75: '75ms',
@@ -646,8 +646,8 @@ module.exports = {
       300: '300ms',
       500: '500ms',
       700: '700ms',
-      1000: '1000ms'
-    }
+      1000: '1000ms',
+    },
   },
   variants: {
     accessibility: ['responsive', 'focus'],
@@ -737,8 +737,8 @@ module.exports = {
     skew: ['responsive', 'hover', 'focus'],
     transitionProperty: ['responsive'],
     transitionTimingFunction: ['responsive'],
-    transitionDuration: ['responsive']
+    transitionDuration: ['responsive'],
   },
   corePlugins: {},
-  plugins: []
-}
+  plugins: [],
+};
