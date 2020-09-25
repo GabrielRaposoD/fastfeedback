@@ -3,6 +3,9 @@ import ReactModal from 'react-modal';
 import { FaTimes } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { createSite } from '../lib/db';
+import { useSnackbar } from '@brancol/react-snackbar';
+import { useAuth } from '../lib/auth';
+import { mutate } from 'swr';
 
 ReactModal.setAppElement('#__next');
 
@@ -20,7 +23,32 @@ export default function AddSiteModal({
   onConfirm,
 }: AddSiteModalProps) {
   const { handleSubmit, register } = useForm();
-  const onSubmit = (values) => createSite(values);
+  const auth = useAuth();
+
+  const onCreateSite = async ({ name, url }) => {
+    const newSite = {
+      authorId: auth.user.uid,
+      createdAt: new Date().toISOString(),
+      name,
+      url,
+    };
+
+    createSite(newSite);
+    snackbar.showSuccess('Site Added With Success!');
+
+    await mutate(
+      '/api/sites',
+      async (data) => {
+        console.log(data.sites);
+        return { sites: [...data.sites, newSite] };
+      },
+      false
+    );
+
+    onClose();
+  };
+
+  const snackbar = useSnackbar();
 
   return (
     <ReactModal
@@ -39,7 +67,7 @@ export default function AddSiteModal({
             onClick={() => onClose()}
           />
         </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onCreateSite)}>
           <div className='flex flex-col mt-5'>
             <label htmlFor='siteName' className='text-lg font-semibold'>
               Name
@@ -56,17 +84,17 @@ export default function AddSiteModal({
             />
           </div>
           <div className='flex flex-col mt-5'>
-            <label htmlFor='siteLink' className='text-lg font-semibold'>
-              Link
+            <label htmlFor='siteUrl' className='text-lg font-semibold'>
+              Url
             </label>
             <input
               className='focus:border-primary-500 px-4 py-2 mt-2 border border-black border-solid rounded-md'
               type='text'
-              name='link'
+              name='url'
               ref={register({
                 required: 'Required',
               })}
-              id='siteLink'
+              id='siteUrl'
               placeholder='https://website.com'
             />
           </div>

@@ -4,6 +4,7 @@ import '../css/main.css';
 import GoogleFonts from 'next-google-fonts';
 import { DefaultSeo } from 'next-seo';
 import { ProvideAuth } from '../lib/auth';
+import SnackbarProvider from '@brancol/react-snackbar';
 
 function MyApp({ Component, pageProps, router }) {
   return (
@@ -15,7 +16,9 @@ function MyApp({ Component, pageProps, router }) {
       />
       <GoogleFonts href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' />
       <ProvideAuth>
-        <Component {...pageProps} />
+        <SnackbarProvider>
+          <Component {...pageProps} />
+        </SnackbarProvider>
       </ProvideAuth>
     </>
   );
