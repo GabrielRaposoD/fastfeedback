@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 export default function SiteFeedback({ initialFeedback }) {
   return (
     <div>
-      <div>teste</div>
+      <div></div>
     </div>
   );
 }
