@@ -5,6 +5,7 @@ export default async (_, res) => {
   const sites = [];
 
   data.forEach((site) => {
+    console.log('oi');
     sites.push({ id: site.id, ...site.data() });
   });
 

@@ -5,7 +5,8 @@ import { useForm } from 'react-hook-form';
 import { createSite } from '../lib/db';
 import { useSnackbar } from '@brancol/react-snackbar';
 import { useAuth } from '../lib/auth';
-import { mutate } from 'swr';
+import useSWR, { mutate } from 'swr';
+import fetcher from '../utils/fetcher';
 
 ReactModal.setAppElement('#__next');
 
@@ -24,6 +25,7 @@ export default function AddSiteModal({
 }: AddSiteModalProps) {
   const { handleSubmit, register } = useForm();
   const auth = useAuth();
+  const { data, mutate } = useSWR('api/sites', fetcher);
 
   const onCreateSite = async ({ name, url }) => {
     const newSite = {
@@ -36,15 +38,8 @@ export default function AddSiteModal({
     createSite(newSite);
     snackbar.showSuccess('Site Added With Success!');
 
-    await mutate(
-      '/api/sites',
-      async (data) => {
-        console.log(data.sites);
-        return { sites: [...data.sites, newSite] };
-      },
-      false
-    );
-
+    mutate({ sites: [...data.sites, newSite] }, false);
+    console.log(data);
     onClose();
   };
 
