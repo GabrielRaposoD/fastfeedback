@@ -8,8 +8,8 @@ import { useRouter } from 'next/router';
 interface AuthContextInterface {
   user: User | null;
   loading: boolean;
-  signInWithGitHub: (redirect: string) => any;
-  signInWithGoogle: (redirect: string) => any;
+  signInWithGitHub: (redirect?: string) => any;
+  signInWithGoogle: (redirect?: string) => any;
   signOut: () => any;
 }
 
@@ -47,7 +47,7 @@ const useProvideAuth = () => {
     }
   };
 
-  const signInWithGitHub = (redirect: string) => {
+  const signInWithGitHub = (redirect?: string) => {
     setLoading(true);
     return firebase
       .auth()
@@ -60,7 +60,7 @@ const useProvideAuth = () => {
       });
   };
 
-  const signInWithGoogle = (redirect: string) => {
+  const signInWithGoogle = (redirect?: string) => {
     setLoading(true);
     return firebase
       .auth()

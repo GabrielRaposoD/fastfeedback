@@ -14,7 +14,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
-      <MantineProvider withGlobalStyles withNormalizeCSS>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          fontFamily:
+            'Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+          headings: { fontFamily: 'Open sans, sans-serif' },
+        }}
+      >
         <AuthContextProvider>
           <Component {...pageProps} />
         </AuthContextProvider>
